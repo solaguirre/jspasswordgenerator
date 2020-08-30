@@ -1,65 +1,41 @@
 // Constants
+const generateBtn = document.querySelector("#generate");
 
-const lowerCase = "abcdefghijklmnopqrstuvwxyz";
-const lowerCaseArray = lowercase.split('');
-const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-const upperCaseArray = upperCaseArray.split('');
+let lowerCase = "abcdefghijklmnopqrstuvwxyz";
+let lowerCaseArray = lowerCase.split("");
+let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let upperCaseArray = upperCase.split("");
+let number = "0123456789";
+let numberArray = number.split("");
+let special = "`~!@#$%^&*()_+{}:<>?/.,';][\||";
+let specialArray = special.split("");
 
-let possibleChars = [];
-
-console.log(lowerCaseArray;)
-console.log(upperCaseArray);
-
+let password = "";
+let allChars = [];
 
 // Functions
 
-/**
- * writes a generated password to the #password
- */
+/*** writes a generated password to the #password*/
 function writePassword() {
   const password = generatePassword();
   const passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
-
-/**
- * generate a password based on certain criteria
- */
-function generatePassword() {
-
-  // Password is currently blank! We need to make a better one
-  let password = "";
-
-  let pwLength = prompt("Choose passwrod legth: 8-128 characters.");
-  if (length < || > length > 128) {
-    alert("Password must be between 8 and 128 characters.")
-
-    generatePassword();
-  }
-
-
-  let = confirm();
-
-
-  return password;
-}
-
-// Main Process
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-const allChars = []
+/*** generate a password based on certain criteria*/
+function generatePassword() {
+  let pwLength = prompt("Please enter the numnber of characters you want for your password. It must be between 8 and 128 characters.");
 
-let pwLength = prompt("How many characters do you want your password to be?");
+  if (pwLength < 8 || pwLength > 128) {
+    alert("Please choose a length between 8 and 128 characters.");
+    return password;
+  }
 
-
-conf
-
-
-alert
-no less than 8 no more than 128
-
-
-toUppperCase 
+  let lowerCase = confirm("Do you want lowercase characters?");
+  let upperCase = confirm("Do you want uppercase characters?");
+  let number = confirm("Do you want numeric characters?");
+  let special = confirm("Do you want special characters?");
+}
