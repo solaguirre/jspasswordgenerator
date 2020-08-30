@@ -31,11 +31,25 @@ function generatePassword() {
 
   if (pwLength < 8 || pwLength > 128) {
     alert("Please choose a length between 8 and 128 characters.");
-    return password;
+  }
+  if (confirm("Do you want lowercase characters?")) {
+    Array.prototype.apply(allChars, lowerCaseArray);
   }
 
-  let lowerCase = confirm("Do you want lowercase characters?");
-  let upperCase = confirm("Do you want uppercase characters?");
-  let number = confirm("Do you want numeric characters?");
-  let special = confirm("Do you want special characters?");
+  if (confirm("Do you want uppercase characters?")) {
+    Array.prototype.apply(allChars, upperCaseArray);
+  }
+
+  if (confirm("Do you want numeric characters?")) {
+    Array.prototype.apply(allChars, numberArray);
+  }
+
+  if (confirm("Do you want special characters?")) {
+    Array.prototype.apply(allChars, specialArray);
+  }
+
+  if (allChars.length === 0) {
+    alert("Minimum one type of character must be selected.");
+  };
+  return password;
 }
